@@ -9,6 +9,7 @@ include: "/views/**/reseller_data.view"
 include: "/views/**/sales_data.view"
 include: "/views/**/sales_order_data.view"
 include: "/views/**/sales_territory_data.view"
+include: "/views/**/order_quantity_by_reseller_country_region.view"
 
 # Datagroups define a caching policy for an Explore. To learn more,
 # use the Quick Help panel on the right to see documentation.
@@ -57,3 +58,5 @@ explore: sales_data {
     relationship: many_to_one
   }
 }
+
+explore: order_quantity_by_reseller_country_region {}
