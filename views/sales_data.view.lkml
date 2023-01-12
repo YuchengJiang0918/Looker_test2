@@ -28,7 +28,7 @@ view: sales_data {
   }
 
   dimension: order_quantity {
-    type: string
+    type: number
     sql: ${TABLE}."order quantity" ;;
   }
 
@@ -38,7 +38,7 @@ view: sales_data {
   }
 
   dimension: product_standard_cost {
-    type: string
+    type: number
     sql: ${TABLE}."product standard cost" ;;
   }
 
@@ -53,7 +53,7 @@ view: sales_data {
   }
 
   dimension: sales_amount {
-    type: string
+    type: number
     sql: ${TABLE}."sales amount" ;;
   }
 
@@ -73,12 +73,12 @@ view: sales_data {
   }
 
   dimension: total_product_cost {
-    type: string
+    type: number
     sql: ${TABLE}."total product cost" ;;
   }
 
   dimension: unit_price {
-    type: string
+    type: number
     sql: ${TABLE}."unit price" ;;
   }
 
