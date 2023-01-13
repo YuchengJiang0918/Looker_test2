@@ -1,10 +1,9 @@
-# The name of this view in Looker is "Sales Territory Data"
+# The name of this view in Looker is "Sales Territory"
 view: sales_territory_data {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
-  sql_table_name: "default".sales territory data
+  sql_table_name: "TMP"."SALES_TERRITORY"
     ;;
-  suggestions: no
   # No primary key is defined for this view. In order to join this view in an Explore,
   # define primary_key: yes on a dimension that has no repeated values.
 
@@ -15,22 +14,23 @@ view: sales_territory_data {
   dimension: country {
     type: string
     map_layer_name: countries
-    sql: ${TABLE}.country ;;
+    sql: ${TABLE}."COUNTRY" ;;
   }
 
   dimension: group {
     type: string
-    sql: ${TABLE}."group" ;;
+    sql: ${TABLE}."Group" ;;
   }
 
   dimension: region {
     type: string
-    sql: ${TABLE}.region ;;
+    sql: ${TABLE}."REGION" ;;
   }
 
   dimension: salesterritorykey {
     type: string
-    sql: ${TABLE}.salesterritorykey ;;
+    sql: ${TABLE}."SALESTERRITORYKEY" ;;
+    primary_key: yes
   }
 
   measure: count {

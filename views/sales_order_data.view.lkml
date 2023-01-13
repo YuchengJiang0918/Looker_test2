@@ -1,10 +1,9 @@
-# The name of this view in Looker is "Sales Order Data"
+# The name of this view in Looker is "Adventureworks Sales"
 view: sales_order_data {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
-  sql_table_name: "default".sales order data
+  sql_table_name: "TMP"."ADVENTUREWORKS_SALES"
     ;;
-  suggestions: no
   # No primary key is defined for this view. In order to join this view in an Explore,
   # define primary_key: yes on a dimension that has no repeated values.
 
@@ -14,22 +13,37 @@ view: sales_order_data {
 
   dimension: channel {
     type: string
-    sql: ${TABLE}.channel ;;
+    sql: ${TABLE}."CHANNEL" ;;
   }
 
   dimension: sales_order {
     type: string
-    sql: ${TABLE}."sales order" ;;
+    sql: ${TABLE}."SALES_ORDER" ;;
   }
 
   dimension: sales_order_line {
     type: string
-    sql: ${TABLE}."sales order line" ;;
+    sql: ${TABLE}."SALES_ORDER_LINE" ;;
   }
 
   dimension: salesorderlinekey {
-    type: string
-    sql: ${TABLE}.salesorderlinekey ;;
+    type: number
+    sql: ${TABLE}."SALESORDERLINEKEY" ;;
+    primary_key: yes
+  }
+
+  # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
+  # measures for this dimension, but you can also add measures of many different aggregates.
+  # Click on the type parameter to see all the options in the Quick Help panel on the right.
+
+  measure: total_salesorderlinekey {
+    type: sum
+    sql: ${salesorderlinekey} ;;
+  }
+
+  measure: average_salesorderlinekey {
+    type: average
+    sql: ${salesorderlinekey} ;;
   }
 
   measure: count {

@@ -2,9 +2,8 @@
 view: product_data {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
-  sql_table_name: "default".product data
+  sql_table_name: "TMP"."PRODUCT_DATA"
     ;;
-  suggestions: no
   # No primary key is defined for this view. In order to join this view in an Explore,
   # define primary_key: yes on a dimension that has no repeated values.
 
@@ -14,47 +13,48 @@ view: product_data {
 
   dimension: category {
     type: string
-    sql: ${TABLE}.category ;;
+    sql: ${TABLE}."CATEGORY" ;;
   }
 
   dimension: color {
     type: string
-    sql: ${TABLE}.color ;;
+    sql: ${TABLE}."COLOR" ;;
   }
 
   dimension: list_price {
     type: string
-    sql: ${TABLE}."list price" ;;
+    sql: ${TABLE}."LIST_PRICE" ;;
   }
 
   dimension: model {
     type: string
-    sql: ${TABLE}.model ;;
+    sql: ${TABLE}."MODEL" ;;
   }
 
   dimension: product {
     type: string
-    sql: ${TABLE}.product ;;
+    sql: ${TABLE}."PRODUCT" ;;
   }
 
   dimension: productkey {
     type: string
-    sql: ${TABLE}.productkey ;;
+    sql: ${TABLE}."PRODUCTKEY" ;;
+    primary_key: yes
   }
 
   dimension: sku {
     type: string
-    sql: ${TABLE}.sku ;;
+    sql: ${TABLE}."SKU" ;;
   }
 
   dimension: standard_cost {
     type: string
-    sql: ${TABLE}."standard cost" ;;
+    sql: ${TABLE}."STANDARD_COST" ;;
   }
 
   dimension: subcategory {
     type: string
-    sql: ${TABLE}.subcategory ;;
+    sql: ${TABLE}."SUBCATEGORY" ;;
   }
 
   measure: count {

@@ -2,9 +2,8 @@
 view: date_data {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
-  sql_table_name: "default".date data
+  sql_table_name: "TMP"."DATE_DATA"
     ;;
-  suggestions: no
   # No primary key is defined for this view. In order to join this view in an Explore,
   # define primary_key: yes on a dimension that has no repeated values.
 
@@ -14,37 +13,38 @@ view: date_data {
 
   dimension: date {
     type: string
-    sql: ${TABLE}."date" ;;
+    sql: ${TABLE}."DATE" ;;
   }
 
   dimension: datekey {
     type: string
-    sql: ${TABLE}.datekey ;;
+    sql: ${TABLE}."DATEKEY" ;;
+    primary_key: yes
   }
 
   dimension: fiscal_quarter {
     type: string
-    sql: ${TABLE}."fiscal quarter" ;;
+    sql: ${TABLE}."FISCAL_QUARTER" ;;
   }
 
   dimension: fiscal_year {
     type: string
-    sql: ${TABLE}."fiscal year" ;;
+    sql: ${TABLE}."FISCAL_YEAR" ;;
   }
 
   dimension: full_date {
     type: string
-    sql: ${TABLE}."full date" ;;
+    sql: ${TABLE}."FULL_DATE" ;;
   }
 
   dimension: month {
     type: string
-    sql: ${TABLE}."month" ;;
+    sql: ${TABLE}."MONTH" ;;
   }
 
   dimension: monthkey {
     type: string
-    sql: ${TABLE}.monthkey ;;
+    sql: ${TABLE}."MONTHKEY" ;;
   }
 
   measure: count {

@@ -2,9 +2,8 @@
 view: reseller_data {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
-  sql_table_name: "default".reseller data
+  sql_table_name: "TMP"."RESELLER_DATA"
     ;;
-  suggestions: no
   # No primary key is defined for this view. In order to join this view in an Explore,
   # define primary_key: yes on a dimension that has no repeated values.
 
@@ -14,42 +13,43 @@ view: reseller_data {
 
   dimension: business_type {
     type: string
-    sql: ${TABLE}."business type" ;;
+    sql: ${TABLE}."BUSINESS_TYPE" ;;
   }
 
   dimension: city {
     type: string
-    sql: ${TABLE}.city ;;
+    sql: ${TABLE}."CITY" ;;
   }
 
   dimension: countryregion {
     type: string
-    sql: ${TABLE}."country-region" ;;
+    sql: ${TABLE}."COUNTRYREGION" ;;
   }
 
   dimension: postal_code {
     type: string
-    sql: ${TABLE}."postal code" ;;
+    sql: ${TABLE}."POSTAL_CODE" ;;
   }
 
   dimension: reseller {
     type: string
-    sql: ${TABLE}.reseller ;;
+    sql: ${TABLE}."RESELLER" ;;
   }
 
   dimension: reseller_id {
     type: string
-    sql: ${TABLE}."reseller id" ;;
+    sql: ${TABLE}."RESELLER_ID" ;;
   }
 
   dimension: resellerkey {
     type: string
-    sql: ${TABLE}.resellerkey ;;
+    sql: ${TABLE}."RESELLERKEY" ;;
+    primary_key: yes
   }
 
   dimension: stateprovince {
     type: string
-    sql: ${TABLE}."state-province" ;;
+    sql: ${TABLE}."STATEPROVINCE" ;;
   }
 
   measure: count {

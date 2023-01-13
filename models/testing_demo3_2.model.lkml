@@ -1,5 +1,5 @@
 # Define the database connection to be used for this model.
-connection: "aws_athena_test"
+connection: "snowflake_test"
 
 # include all the views
 include: "/views/**/*.view"

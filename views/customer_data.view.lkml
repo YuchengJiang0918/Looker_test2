@@ -2,9 +2,8 @@
 view: customer_data {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
-  sql_table_name: "default".customer data
+  sql_table_name: "TMP"."CUSTOMER_DATA"
     ;;
-  suggestions: no
   # No primary key is defined for this view. In order to join this view in an Explore,
   # define primary_key: yes on a dimension that has no repeated values.
 
@@ -14,37 +13,38 @@ view: customer_data {
 
   dimension: city {
     type: string
-    sql: ${TABLE}.city ;;
+    sql: ${TABLE}."CITY" ;;
   }
 
   dimension: countryregion {
     type: string
-    sql: ${TABLE}."country-region" ;;
+    sql: ${TABLE}."COUNTRYREGION" ;;
   }
 
   dimension: customer {
     type: string
-    sql: ${TABLE}.customer ;;
+    sql: ${TABLE}."CUSTOMER" ;;
   }
 
   dimension: customer_id {
     type: string
-    sql: ${TABLE}."customer id" ;;
+    sql: ${TABLE}."CUSTOMER_ID" ;;
   }
 
   dimension: customerkey {
     type: string
-    sql: ${TABLE}.customerkey ;;
+    sql: ${TABLE}."CUSTOMERKEY" ;;
+    primary_key: yes
   }
 
   dimension: postal_code {
     type: string
-    sql: ${TABLE}."postal code" ;;
+    sql: ${TABLE}."POSTAL_CODE" ;;
   }
 
   dimension: stateprovince {
     type: string
-    sql: ${TABLE}."state-province" ;;
+    sql: ${TABLE}."STATEPROVINCE" ;;
   }
 
   measure: count {
