@@ -52,7 +52,7 @@ view: sales_data {
   }
 
   dimension: sales_amount {
-    type: string
+    type: number
     sql: ${TABLE}."SALES_AMOUNT" ;;
   }
 
