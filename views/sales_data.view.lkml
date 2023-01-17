@@ -27,7 +27,7 @@ view: sales_data {
   }
 
   dimension: order_quantity {
-    type: string
+    type: number
     sql: ${TABLE}."ORDER_QUANTITY" ;;
   }
 
