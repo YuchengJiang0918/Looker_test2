@@ -37,7 +37,7 @@ view: sales_data {
   }
 
   dimension: product_standard_cost {
-    type: string
+    type: number
     sql: ${TABLE}."PRODUCT_STANDARD_COST" ;;
   }
 
